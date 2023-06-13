@@ -1,0 +1,12 @@
+2023-06-13 22:11:23.538 +07:00 [INF] User profile is available. Using 'C:\Users\Vongsi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-13 22:11:24.142 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-13 22:11:24.151 +07:00 [INF] Hosting environment: Development
+2023-06-13 22:11:24.157 +07:00 [INF] Content root path: D:\Dev\Dotnet\API\DAHApp
+2023-06-13 22:11:24.218 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/index.html - -
+2023-06-13 22:11:25.179 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/index.html - - - 200 - text/html;charset=utf-8 965.3106ms
+2023-06-13 22:11:25.182 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_vs/browserLink - -
+2023-06-13 22:11:25.195 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - -
+2023-06-13 22:11:25.229 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 41.3785ms
+2023-06-13 22:11:25.383 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 201.7562ms
+2023-06-13 22:11:25.520 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - -
+2023-06-13 22:11:25.964 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 443.3168ms
