@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Dev\\Dotnet\\API\\DAHApp\\wwwroot\\Upload\\Product\\ABX\\507A5ED4F6ED5A3D7B97EA2F528416B2.JPG",
+      "PackagePath": "staticwebassets\\Upload\\Product\\ABX\\507A5ED4F6ED5A3D7B97EA2F528416B2.JPG"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.DAHApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.DAHApp.props",
+      "PackagePath": "build\\DAHApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.DAHApp.props",
+      "PackagePath": "buildMultiTargeting\\DAHApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.DAHApp.props",
+      "PackagePath": "buildTransitive\\DAHApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

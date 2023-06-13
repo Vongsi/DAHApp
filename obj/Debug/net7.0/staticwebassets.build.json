@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "8Wz2nUAWMwPZ6nRFHZJmf1Y3+csijKi5rsDNLHuMJdk=",
+  "Source": "DAHApp",
+  "BasePath": "_content/DAHApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "DAHApp\\wwwroot",
+      "Source": "DAHApp",
+      "ContentRoot": "D:\\Dev\\Dotnet\\API\\DAHApp\\wwwroot\\",
+      "BasePath": "_content/DAHApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Dev\\Dotnet\\API\\DAHApp\\wwwroot\\Upload\\Product\\ABX\\507A5ED4F6ED5A3D7B97EA2F528416B2.JPG",
+      "SourceId": "DAHApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Dev\\Dotnet\\API\\DAHApp\\wwwroot\\",
+      "BasePath": "_content/DAHApp",
+      "RelativePath": "Upload/Product/ABX/507A5ED4F6ED5A3D7B97EA2F528416B2.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Upload\\Product\\ABX\\507A5ED4F6ED5A3D7B97EA2F528416B2.JPG"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+2023-06-08 20:19:13.299 +07:00 [INF] User profile is available. Using 'C:\Users\Vongsi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-08 20:19:14.114 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-08 20:19:14.126 +07:00 [INF] Hosting environment: Development
+2023-06-08 20:19:14.137 +07:00 [INF] Content root path: D:\Dev\Dotnet\API\DAHApp
+2023-06-08 20:19:14.237 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/index.html - -
+2023-06-08 20:19:16.496 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/index.html - - - 200 - text/html;charset=utf-8 2263.6017ms
+2023-06-08 20:19:17.478 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - -
+2023-06-08 20:19:17.494 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 16.0124ms
+2023-06-08 20:19:18.646 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_vs/browserLink - -
+2023-06-08 20:19:19.219 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 573.4304ms
+2023-06-08 20:19:21.616 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - -
+2023-06-08 20:19:21.992 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 375.8934ms
+2023-06-08 20:19:53.872 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/api/v1/Secured - -
+2023-06-08 20:19:54.611 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.v1.SecuredController.GetSecuredData (DAHApp)'
+2023-06-08 20:19:54.671 +07:00 [INF] Route matched with {action = "GetSecuredData", controller = "Secured"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuredData() on controller DAHApp.Controllers.v1.SecuredController (DAHApp).
+2023-06-08 20:19:55.958 +07:00 [INF] Executed action DAHApp.Controllers.v1.SecuredController.GetSecuredData (DAHApp) in 1270.9129ms
+2023-06-08 20:19:55.970 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.v1.SecuredController.GetSecuredData (DAHApp)'
+2023-06-08 20:19:56.167 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/api/v1/Secured - - - 404 - application/json;+x-api-version=1 2295.1128ms
+2023-06-08 20:20:45.577 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v1/Secured - -
+2023-06-08 20:20:46.693 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/06/2023 3:53:59 PM', Current time (UTC): '8/06/2023 1:20:46 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-06-08 20:20:46.705 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/06/2023 3:53:59 PM', Current time (UTC): '8/06/2023 1:20:46 PM'.
+2023-06-08 20:20:46.706 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.v1.SecuredController.GetSecuredData (DAHApp)'
+2023-06-08 20:20:46.708 +07:00 [INF] Route matched with {action = "GetSecuredData", controller = "Secured"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuredData() on controller DAHApp.Controllers.v1.SecuredController (DAHApp).
+2023-06-08 20:20:46.807 +07:00 [INF] Executed action DAHApp.Controllers.v1.SecuredController.GetSecuredData (DAHApp) in 98.392ms
+2023-06-08 20:20:46.808 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.v1.SecuredController.GetSecuredData (DAHApp)'
+2023-06-08 20:20:46.865 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v1/Secured - - - 404 - application/json;+x-api-version=1 1287.5032ms
+2023-06-08 20:21:40.027 +07:00 [INF] User profile is available. Using 'C:\Users\Vongsi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-08 20:21:40.524 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-08 20:21:40.529 +07:00 [INF] Hosting environment: Development
+2023-06-08 20:21:40.537 +07:00 [INF] Content root path: D:\Dev\Dotnet\API\DAHApp
+2023-06-08 20:21:40.595 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/index.html - -
+2023-06-08 20:21:41.394 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/index.html - - - 200 - text/html;charset=utf-8 806.4728ms
+2023-06-08 20:21:41.456 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - -
+2023-06-08 20:21:41.456 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_vs/browserLink - -
+2023-06-08 20:21:41.472 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 16.0538ms
+2023-06-08 20:21:41.680 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - -
+2023-06-08 20:21:41.681 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_vs/browserLink - -
+2023-06-08 20:21:41.686 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 230.5833ms
+2023-06-08 20:21:41.693 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 12.4769ms
+2023-06-08 20:21:41.935 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 254.1485ms
+2023-06-08 20:21:42.270 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - -
+2023-06-08 20:21:42.660 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 389.5188ms
+2023-06-08 20:21:43.190 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - -
+2023-06-08 20:21:43.206 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 16.1831ms
+2023-06-08 20:21:49.989 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/api/v1/Secured - -
+2023-06-08 20:21:50.756 +07:00 [INF] ApiKey was not authenticated. Failure message: Header Not Found.
+2023-06-08 20:21:50.769 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-06-08 20:21:50.785 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-06-08 20:21:50.801 +07:00 [INF] AuthenticationScheme: ApiKey was challenged.
+2023-06-08 20:21:50.807 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/api/v1/Secured - - - 401 - - 818.7555ms
+2023-06-08 20:22:01.006 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v1/Secured - -
+2023-06-08 20:22:01.611 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/06/2023 3:53:59 PM', Current time (UTC): '8/06/2023 1:22:01 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-06-08 20:22:01.706 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/06/2023 3:53:59 PM', Current time (UTC): '8/06/2023 1:22:01 PM'.
+2023-06-08 20:22:01.719 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '1/06/2023 3:53:59 PM', Current time (UTC): '8/06/2023 1:22:01 PM'.
+2023-06-08 20:22:01.772 +07:00 [INF] ApiKey was not authenticated. Failure message: Header Not Found.
+2023-06-08 20:22:01.773 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-06-08 20:22:01.782 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-06-08 20:22:01.790 +07:00 [INF] AuthenticationScheme: ApiKey was challenged.
+2023-06-08 20:22:01.792 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v1/Secured - - - 401 - - 786.5224ms
+2023-06-08 20:22:10.780 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v2/Secured - -
+2023-06-08 20:22:17.339 +07:00 [INF] Executed DbCommand (233ms) [Parameters=[@__apiKeyToValidate_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[UserID], [t].[Value], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [r].[ApplicationUserId], [r].[Id], [r].[Created], [r].[Expires], [r].[Revoked], [r].[Token]
+FROM (
+    SELECT TOP(2) [u].[ID], [u].[UserID], [u].[Value], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [UserApiKeys] AS [u]
+    INNER JOIN [AspNetUsers] AS [a] ON [u].[UserID] = [a].[Id]
+    WHERE [u].[Value] = @__apiKeyToValidate_0
+) AS [t]
+LEFT JOIN [RefreshToken] AS [r] ON [t].[Id0] = [r].[ApplicationUserId]
+ORDER BY [t].[ID], [t].[Id0], [r].[ApplicationUserId]
+2023-06-08 20:22:18.023 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-08 20:22:18.083 +07:00 [INF] Route matched with {action = "GetSecuredData", controller = "Secured"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuredData() on controller DAHApp.Controllers.v2.SecuredController (DAHApp).
+2023-06-08 20:22:18.110 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-06-08 20:22:18.130 +07:00 [INF] Executed action DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp) in 35.7093ms
+2023-06-08 20:22:18.132 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-08 20:22:18.144 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v2/Secured - - - 200 - text/plain;+charset=utf-8;+x-api-version=2 7363.6062ms
+2023-06-08 20:22:28.659 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:44376/api/User/tokens/a8b70af5-ef27-4650-873d-bb47eebf2392 - 0
+2023-06-08 20:22:28.667 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2023 4:18:44 PM', Current time (UTC): '8/06/2023 1:22:28 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-06-08 20:22:28.668 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2023 4:18:44 PM', Current time (UTC): '8/06/2023 1:22:28 PM'.
+2023-06-08 20:22:28.671 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:44376/api/User/tokens/a8b70af5-ef27-4650-873d-bb47eebf2392 - 0 - 404 - - 11.7894ms
+2023-06-08 20:22:35.218 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:44376/api/v1/User/token application/json 60
+2023-06-08 20:22:35.226 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.UserController.GetTokenAsync (DAHApp)'
+2023-06-08 20:22:35.258 +07:00 [INF] Route matched with {action = "GetToken", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(DAHApp.Models.TokenRequestModel) on controller DAHApp.Controllers.UserController (DAHApp).
+2023-06-08 20:22:35.512 +07:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [r].[ApplicationUserId], [r].[Id], [r].[Created], [r].[Expires], [r].[Revoked], [r].[Token]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+) AS [t]
+LEFT JOIN [RefreshToken] AS [r] ON [t].[Id] = [r].[ApplicationUserId]
+ORDER BY [t].[Id], [r].[ApplicationUserId]
+2023-06-08 20:22:35.531 +07:00 [INF] vongsi@dah.com
+2023-06-08 20:22:35.967 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-06-08 20:22:36.034 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-06-08 20:22:36.135 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-06-08 20:22:36.675 +07:00 [INF] Executed DbCommand (40ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256), @p18='?' (Size = 450), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = DateTime2), @p22='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+INSERT INTO [RefreshToken] ([ApplicationUserId], [Created], [Expires], [Revoked], [Token])
+OUTPUT INSERTED.[Id]
+VALUES (@p18, @p19, @p20, @p21, @p22);
+2023-06-08 20:22:36.776 +07:00 [INF] Executing OkObjectResult, writing value of type 'DAHApp.Models.AuthenticationModel'.
+2023-06-08 20:22:36.835 +07:00 [INF] Executed action DAHApp.Controllers.UserController.GetTokenAsync (DAHApp) in 1577.2057ms
+2023-06-08 20:22:36.837 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.UserController.GetTokenAsync (DAHApp)'
+2023-06-08 20:22:36.839 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:44376/api/v1/User/token application/json 60 - 200 - application/json;+charset=utf-8;+x-api-version=1 1621.1298ms
+2023-06-08 20:22:51.479 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v1/Secured - -
+2023-06-08 20:22:51.522 +07:00 [INF] ApiKey was not authenticated. Failure message: Header Not Found.
+2023-06-08 20:22:51.523 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.v1.SecuredController.GetSecuredData (DAHApp)'
+2023-06-08 20:22:51.536 +07:00 [INF] Route matched with {action = "GetSecuredData", controller = "Secured"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuredData() on controller DAHApp.Controllers.v1.SecuredController (DAHApp).
+2023-06-08 20:22:51.715 +07:00 [INF] Executed action DAHApp.Controllers.v1.SecuredController.GetSecuredData (DAHApp) in 178.5662ms
+2023-06-08 20:22:51.716 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.v1.SecuredController.GetSecuredData (DAHApp)'
+2023-06-08 20:22:51.824 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v1/Secured - - - 404 - application/json;+x-api-version=1 344.4272ms

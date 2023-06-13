@@ -1,0 +1,226 @@
+2023-06-11 14:41:12.175 +07:00 [INF] User profile is available. Using 'C:\Users\Vongsi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-11 14:41:12.581 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-11 14:41:12.585 +07:00 [INF] Hosting environment: Development
+2023-06-11 14:41:12.589 +07:00 [INF] Content root path: D:\Dev\Dotnet\API\DAHApp
+2023-06-11 14:41:12.631 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/index.html - -
+2023-06-11 14:41:13.506 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/swagger-ui-standalone-preset.js - -
+2023-06-11 14:41:13.506 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/swagger-ui-bundle.js - -
+2023-06-11 14:41:13.510 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/index.html - - - 200 - text/html;charset=utf-8 882.6753ms
+2023-06-11 14:41:13.531 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/swagger-ui.css - -
+2023-06-11 14:41:13.564 +07:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2023-06-11 14:41:13.564 +07:00 [INF] The file /swagger-ui.css was not modified
+2023-06-11 14:41:13.564 +07:00 [INF] The file /swagger-ui-bundle.js was not modified
+2023-06-11 14:41:13.570 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/swagger-ui-standalone-preset.js - - - 304 - text/javascript 63.5668ms
+2023-06-11 14:41:13.574 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/swagger-ui-bundle.js - - - 304 - text/javascript 63.5799ms
+2023-06-11 14:41:13.574 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/swagger-ui.css - - - 304 - text/css 38.6824ms
+2023-06-11 14:41:13.588 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - -
+2023-06-11 14:41:13.625 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/_vs/browserLink - -
+2023-06-11 14:41:13.747 +07:00 [ERR] Connection ID "17654110561572487248", Request ID "40000051-0005-f500-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream.ValidateState(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream.WriteAsync(ReadOnlyMemory`1 source, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserScriptMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2023-06-11 14:41:13.749 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_framework/aspnetcore-browser-refresh.js - - - 0 11982 application/javascript;+charset=utf-8 167.2393ms
+2023-06-11 14:41:13.820 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 194.6199ms
+2023-06-11 14:41:14.376 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - -
+2023-06-11 14:41:14.636 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44376/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 260.1933ms
+2023-06-11 14:45:11.912 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v2/Secured - -
+2023-06-11 14:45:15.835 +07:00 [INF] Executed DbCommand (127ms) [Parameters=[@__apiKeyToValidate_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[UserID], [t].[Value], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [r].[ApplicationUserId], [r].[Id], [r].[Created], [r].[Expires], [r].[Revoked], [r].[Token]
+FROM (
+    SELECT TOP(2) [u].[ID], [u].[UserID], [u].[Value], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [UserApiKeys] AS [u]
+    INNER JOIN [AspNetUsers] AS [a] ON [u].[UserID] = [a].[Id]
+    WHERE [u].[Value] = @__apiKeyToValidate_0
+) AS [t]
+LEFT JOIN [RefreshToken] AS [r] ON [t].[Id0] = [r].[ApplicationUserId]
+ORDER BY [t].[ID], [t].[Id0], [r].[ApplicationUserId]
+2023-06-11 14:45:16.204 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 14:45:16.223 +07:00 [INF] Route matched with {action = "GetSecuredData", controller = "Secured"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuredData() on controller DAHApp.Controllers.v2.SecuredController (DAHApp).
+2023-06-11 14:45:16.232 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-06-11 14:45:16.238 +07:00 [INF] Executed action DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp) in 10.6ms
+2023-06-11 14:45:16.240 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 14:45:16.254 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v2/Secured - - - 200 - text/plain;+charset=utf-8;+x-api-version=2 4372.6072ms
+2023-06-11 14:45:21.311 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:44376/api/v2/Secured - 0
+2023-06-11 14:45:21.355 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__apiKeyToValidate_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[UserID], [t].[Value], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [r].[ApplicationUserId], [r].[Id], [r].[Created], [r].[Expires], [r].[Revoked], [r].[Token]
+FROM (
+    SELECT TOP(2) [u].[ID], [u].[UserID], [u].[Value], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [UserApiKeys] AS [u]
+    INNER JOIN [AspNetUsers] AS [a] ON [u].[UserID] = [a].[Id]
+    WHERE [u].[Value] = @__apiKeyToValidate_0
+) AS [t]
+LEFT JOIN [RefreshToken] AS [r] ON [t].[Id0] = [r].[ApplicationUserId]
+ORDER BY [t].[ID], [t].[Id0], [r].[ApplicationUserId]
+2023-06-11 14:45:21.362 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Administrator)
+2023-06-11 14:45:21.365 +07:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2023-06-11 14:45:21.370 +07:00 [INF] AuthenticationScheme: ApiKey was forbidden.
+2023-06-11 14:45:21.372 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:44376/api/v2/Secured - 0 - 403 - - 60.0954ms
+2023-06-11 14:45:25.063 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v2/Secured - -
+2023-06-11 14:45:25.157 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__apiKeyToValidate_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[UserID], [t].[Value], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [r].[ApplicationUserId], [r].[Id], [r].[Created], [r].[Expires], [r].[Revoked], [r].[Token]
+FROM (
+    SELECT TOP(2) [u].[ID], [u].[UserID], [u].[Value], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [UserApiKeys] AS [u]
+    INNER JOIN [AspNetUsers] AS [a] ON [u].[UserID] = [a].[Id]
+    WHERE [u].[Value] = @__apiKeyToValidate_0
+) AS [t]
+LEFT JOIN [RefreshToken] AS [r] ON [t].[Id0] = [r].[ApplicationUserId]
+ORDER BY [t].[ID], [t].[Id0], [r].[ApplicationUserId]
+2023-06-11 14:45:25.160 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 14:45:25.161 +07:00 [INF] Route matched with {action = "GetSecuredData", controller = "Secured"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuredData() on controller DAHApp.Controllers.v2.SecuredController (DAHApp).
+2023-06-11 14:45:25.163 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-06-11 14:45:25.166 +07:00 [INF] Executed action DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp) in 3.9763ms
+2023-06-11 14:45:25.166 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 14:45:25.166 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v2/Secured - - - 200 - text/plain;+charset=utf-8;+x-api-version=2 102.9670ms
+2023-06-11 15:49:08.173 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v2/Secured - -
+2023-06-11 15:49:08.202 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__apiKeyToValidate_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[UserID], [t].[Value], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [r].[ApplicationUserId], [r].[Id], [r].[Created], [r].[Expires], [r].[Revoked], [r].[Token]
+FROM (
+    SELECT TOP(2) [u].[ID], [u].[UserID], [u].[Value], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [UserApiKeys] AS [u]
+    INNER JOIN [AspNetUsers] AS [a] ON [u].[UserID] = [a].[Id]
+    WHERE [u].[Value] = @__apiKeyToValidate_0
+) AS [t]
+LEFT JOIN [RefreshToken] AS [r] ON [t].[Id0] = [r].[ApplicationUserId]
+ORDER BY [t].[ID], [t].[Id0], [r].[ApplicationUserId]
+2023-06-11 15:49:08.204 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 15:49:08.204 +07:00 [INF] Route matched with {action = "GetSecuredData", controller = "Secured"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuredData() on controller DAHApp.Controllers.v2.SecuredController (DAHApp).
+2023-06-11 15:49:08.204 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-06-11 15:49:08.206 +07:00 [INF] Executed action DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp) in 1.2076ms
+2023-06-11 15:49:08.206 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 15:49:08.207 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v2/Secured - - - 200 - text/plain;+charset=utf-8;+x-api-version=2 34.2507ms
+2023-06-11 15:49:11.684 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v1/Secured - -
+2023-06-11 15:49:12.198 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/06/2023 5:52:37 AM', Current time (UTC): '11/06/2023 8:49:12 AM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-06-11 15:49:12.199 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/06/2023 5:52:37 AM', Current time (UTC): '11/06/2023 8:49:12 AM'.
+2023-06-11 15:49:12.199 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/06/2023 5:52:37 AM', Current time (UTC): '11/06/2023 8:49:12 AM'.
+2023-06-11 15:49:12.202 +07:00 [INF] ApiKey was not authenticated. Failure message: Header Not Found.
+2023-06-11 15:49:12.203 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-06-11 15:49:12.212 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-06-11 15:49:12.216 +07:00 [INF] AuthenticationScheme: ApiKey was challenged.
+2023-06-11 15:49:12.217 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v1/Secured - - - 401 - - 532.1750ms
+2023-06-11 15:49:24.863 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v1/Secured - -
+2023-06-11 15:49:24.866 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/06/2023 5:52:37 AM', Current time (UTC): '11/06/2023 8:49:24 AM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-06-11 15:49:24.866 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/06/2023 5:52:37 AM', Current time (UTC): '11/06/2023 8:49:24 AM'.
+2023-06-11 15:49:24.866 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/06/2023 5:52:37 AM', Current time (UTC): '11/06/2023 8:49:24 AM'.
+2023-06-11 15:49:24.868 +07:00 [INF] ApiKey was not authenticated. Failure message: Header Not Found.
+2023-06-11 15:49:24.869 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-06-11 15:49:24.869 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-06-11 15:49:24.871 +07:00 [INF] AuthenticationScheme: ApiKey was challenged.
+2023-06-11 15:49:24.874 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v1/Secured - - - 401 - - 10.3213ms
+2023-06-11 15:49:28.542 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v2/Secured - -
+2023-06-11 15:49:28.552 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__apiKeyToValidate_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[UserID], [t].[Value], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [r].[ApplicationUserId], [r].[Id], [r].[Created], [r].[Expires], [r].[Revoked], [r].[Token]
+FROM (
+    SELECT TOP(2) [u].[ID], [u].[UserID], [u].[Value], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [UserApiKeys] AS [u]
+    INNER JOIN [AspNetUsers] AS [a] ON [u].[UserID] = [a].[Id]
+    WHERE [u].[Value] = @__apiKeyToValidate_0
+) AS [t]
+LEFT JOIN [RefreshToken] AS [r] ON [t].[Id0] = [r].[ApplicationUserId]
+ORDER BY [t].[ID], [t].[Id0], [r].[ApplicationUserId]
+2023-06-11 15:49:28.554 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 15:49:28.554 +07:00 [INF] Route matched with {action = "GetSecuredData", controller = "Secured"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuredData() on controller DAHApp.Controllers.v2.SecuredController (DAHApp).
+2023-06-11 15:49:28.556 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-06-11 15:49:28.559 +07:00 [INF] Executed action DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp) in 4.4282ms
+2023-06-11 15:49:28.559 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 15:49:28.559 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v2/Secured - - - 200 - text/plain;+charset=utf-8;+x-api-version=2 17.3952ms
+2023-06-11 15:49:30.126 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44376/api/v2/Secured - -
+2023-06-11 15:49:30.137 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__apiKeyToValidate_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[UserID], [t].[Value], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [r].[ApplicationUserId], [r].[Id], [r].[Created], [r].[Expires], [r].[Revoked], [r].[Token]
+FROM (
+    SELECT TOP(2) [u].[ID], [u].[UserID], [u].[Value], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [UserApiKeys] AS [u]
+    INNER JOIN [AspNetUsers] AS [a] ON [u].[UserID] = [a].[Id]
+    WHERE [u].[Value] = @__apiKeyToValidate_0
+) AS [t]
+LEFT JOIN [RefreshToken] AS [r] ON [t].[Id0] = [r].[ApplicationUserId]
+ORDER BY [t].[ID], [t].[Id0], [r].[ApplicationUserId]
+2023-06-11 15:49:30.141 +07:00 [INF] Executing endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 15:49:30.141 +07:00 [INF] Route matched with {action = "GetSecuredData", controller = "Secured"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuredData() on controller DAHApp.Controllers.v2.SecuredController (DAHApp).
+2023-06-11 15:49:30.142 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-06-11 15:49:30.143 +07:00 [INF] Executed action DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp) in 1.0207ms
+2023-06-11 15:49:30.143 +07:00 [INF] Executed endpoint 'DAHApp.Controllers.v2.SecuredController.GetSecuredData (DAHApp)'
+2023-06-11 15:49:30.143 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44376/api/v2/Secured - - - 200 - text/plain;+charset=utf-8;+x-api-version=2 16.7480ms
+2023-06-11 08:51:47.820 +00:00 [WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+2023-06-11 08:51:47.856 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-06-11 08:51:47.868 +00:00 [INF] Creating key {61dc6195-c022-4dbe-8c45-b200c311ae7f} with creation date 2023-06-11 08:51:47Z, activation date 2023-06-11 08:51:47Z, and expiration date 2023-09-09 08:51:47Z.
+2023-06-11 08:51:47.887 +00:00 [WRN] No XML encryptor configured. Key {61dc6195-c022-4dbe-8c45-b200c311ae7f} may be persisted to storage in unencrypted form.
+2023-06-11 08:51:47.891 +00:00 [INF] Writing data to file '/root/.aspnet/DataProtection-Keys/key-61dc6195-c022-4dbe-8c45-b200c311ae7f.xml'.
+2023-06-11 08:51:48.130 +00:00 [INF] Now listening on: https://[::]:443
+2023-06-11 08:51:48.132 +00:00 [INF] Now listening on: http://[::]:80
+2023-06-11 08:51:48.138 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-11 08:51:48.140 +00:00 [INF] Hosting environment: Development
+2023-06-11 08:51:48.143 +00:00 [INF] Content root path: /app
+2023-06-11 08:51:49.073 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32770/swagger/index.html - -
+2023-06-11 08:51:49.312 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32770/swagger/index.html - - - 200 - text/html;charset=utf-8 249.5681ms
+2023-06-11 08:51:49.356 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32770/swagger/swagger-ui.css - -
+2023-06-11 08:51:49.397 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32770/swagger/swagger-ui-standalone-preset.js - -
+2023-06-11 08:51:49.398 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32770/swagger/swagger-ui-bundle.js - -
+2023-06-11 08:51:49.424 +00:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2023-06-11 08:51:49.424 +00:00 [INF] The file /swagger-ui.css was not modified
+2023-06-11 08:51:49.426 +00:00 [INF] The file /swagger-ui-bundle.js was not modified
+2023-06-11 08:51:49.428 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32770/swagger/swagger-ui-standalone-preset.js - - - 304 - text/javascript 30.8420ms
+2023-06-11 08:51:49.428 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32770/swagger/swagger-ui.css - - - 304 - text/css 72.0858ms
+2023-06-11 08:51:49.429 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32770/swagger/swagger-ui-bundle.js - - - 304 - text/javascript 31.3950ms
+2023-06-11 08:51:49.691 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32770/swagger/v1/swagger.json - -
+2023-06-11 08:51:49.718 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32770/swagger/favicon-32x32.png - -
+2023-06-11 08:51:49.729 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-06-11 08:51:49.732 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32770/swagger/favicon-32x32.png - - - 200 628 image/png 13.0101ms
+2023-06-11 08:51:49.926 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32770/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 235.1554ms
+2023-06-11 08:53:02.747 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32770/api/v1/User/token application/json;+x-api-version=1.0 57
+2023-06-11 08:53:03.111 +00:00 [INF] Executing endpoint 'DAHApp.Controllers.UserController.GetTokenAsync (DAHApp)'
+2023-06-11 08:53:03.134 +00:00 [INF] Route matched with {action = "GetToken", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTokenAsync(DAHApp.Models.TokenRequestModel) on controller DAHApp.Controllers.UserController (DAHApp).
+2023-06-11 08:53:05.830 +00:00 [INF] Executed DbCommand (133ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [r].[ApplicationUserId], [r].[Id], [r].[Created], [r].[Expires], [r].[Revoked], [r].[Token]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+) AS [t]
+LEFT JOIN [RefreshToken] AS [r] ON [t].[Id] = [r].[ApplicationUserId]
+ORDER BY [t].[Id], [r].[ApplicationUserId]
+2023-06-11 08:53:05.977 +00:00 [INF] vongsi@dah.com
+2023-06-11 08:53:06.090 +00:00 [INF] Executed DbCommand (14ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-06-11 08:53:06.142 +00:00 [INF] Executed DbCommand (14ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-06-11 08:53:06.632 +00:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-06-11 08:53:06.644 +00:00 [INF] Executing OkObjectResult, writing value of type 'DAHApp.Models.AuthenticationModel'.
+2023-06-11 08:53:06.660 +00:00 [INF] Executed action DAHApp.Controllers.UserController.GetTokenAsync (DAHApp) in 3522.6752ms
+2023-06-11 08:53:06.663 +00:00 [INF] Executed endpoint 'DAHApp.Controllers.UserController.GetTokenAsync (DAHApp)'
+2023-06-11 08:53:06.672 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32770/api/v1/User/token application/json;+x-api-version=1.0 57 - 200 - application/json;+charset=utf-8;+x-api-version=1 3925.6604ms

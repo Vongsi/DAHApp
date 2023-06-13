@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAHApp", "DAHApp.csproj", "{5E7CB5E2-0294-49E0-9A5E-499BAC2B37F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E7CB5E2-0294-49E0-9A5E-499BAC2B37F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7CB5E2-0294-49E0-9A5E-499BAC2B37F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7CB5E2-0294-49E0-9A5E-499BAC2B37F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7CB5E2-0294-49E0-9A5E-499BAC2B37F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB82605E-C6F2-4E69-BA99-1465DFA607AF}
+	EndGlobalSection
+EndGlobal
